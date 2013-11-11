@@ -44,6 +44,8 @@ init(_Transport, Req, Options) ->
         sp = esaml_sp:setup(#esaml_sp{
             module = proplists:get_value(module, Options, esaml_sp_default),
             modargs = proplists:get_value(modargs, Options, []),
+            idp_signs_envelopes = proplists:get_value(idp_signs_envelopes, Options, true),
+            idp_signs_assertions = proplists:get_value(idp_signs_assertions, Options, true),
             key = PrivKey,
             certificate = Cert,
             trusted_fingerprints = proplists:get_value(trusted_fingerprints, Options, []),
