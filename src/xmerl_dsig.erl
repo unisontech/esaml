@@ -17,6 +17,8 @@
 
 -type xml_thing() :: #xmlDocument{} | #xmlElement{} | #xmlAttribute{} | #xmlPI{} | #xmlText{} | #xmlComment{}.
 
+-type rsa_private_key() :: #'RSAPrivateKey'{}.
+
 %% @doc Returns an xmlelement without any ds:Signature elements that are inside it.
 -spec strip(Element :: #xmlElement{} | #xmlDocument{}) -> #xmlElement{}.
 strip(#xmlDocument{content = Kids} = Doc) ->
